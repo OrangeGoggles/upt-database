@@ -95,22 +95,6 @@ PRIMARY KEY CLUSTERED
 )
 
 GO
-/****** Object:  Table [dbo].[ta_usuario_titulo]    Script Date: 13/05/2017 16:13:27 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[ta_usuario_titulo](
-	[idt_usuario_titulo] [int] IDENTITY(1,1) NOT NULL,
-	[idt_usuario] [int] NOT NULL,
-	[idt_titulo] [int] NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[idt_usuario_titulo] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
 /****** Object:  Table [dbo].[tb_equipe]    Script Date: 13/05/2017 16:13:27 ******/
 SET ANSI_NULLS ON
 GO
@@ -278,6 +262,8 @@ CREATE TABLE [dbo].[tt_conquista](
 	[idt_conquista] [int] IDENTITY(1,1) NOT NULL,
 	[nme_conquista] [varchar](80) NOT NULL,
 	[dsc_conquista] [varchar](200) NOT NULL,
+	[qtd_meta_conquista] [int] NOT NULL,
+	[idt_tipo_tarefa] [int] NOT NULL
 PRIMARY KEY CLUSTERED 
 (
 	[idt_conquista] ASC
@@ -298,6 +284,7 @@ CREATE TABLE [dbo].[tt_dificuldade](
 	[idt_dificuldade] [int] IDENTITY(1,1) NOT NULL,
 	[nme_dificuldade] [varchar](80) NOT NULL,
 	[dsc_dificuldade] [varchar](200) NOT NULL,
+	[mtp_exp_dificuldade] [float] NOT NULL
 PRIMARY KEY CLUSTERED 
 (
 	[idt_dificuldade] ASC
@@ -356,6 +343,7 @@ GO
 CREATE TABLE [dbo].[tt_prioridade](
 	[idt_prioridade] [int] IDENTITY(1,1) NOT NULL,
 	[nme_prioridade] [varchar](80) NOT NULL,
+	[mtp_exp_prioridade][float] NOT NULL
 PRIMARY KEY CLUSTERED 
 (
 	[idt_prioridade] ASC
@@ -384,26 +372,6 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[tt_titulo]    Script Date: 13/05/2017 16:13:28 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[tt_titulo](
-	[idt_titulo] [int] IDENTITY(1,1) NOT NULL,
-	[nme_titulo] [varchar](80) NOT NULL,
-	[dsc_titulo] [varchar](200) NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[idt_titulo] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
-GO
 /****** Object:  Index [fk_ta_usuario_conquista_tb_usuario1_idx]    Script Date: 13/05/2017 16:13:28 ******/
 CREATE NONCLUSTERED INDEX [fk_ta_usuario_conquista_tb_usuario1_idx] ON [dbo].[ta_usuario_conquista]
 (
@@ -426,18 +394,6 @@ GO
 CREATE NONCLUSTERED INDEX [fk_ta_usuario_equipe_tb_usuario_idx] ON [dbo].[ta_usuario_equipe]
 (
 	[idt_usuario] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-GO
-/****** Object:  Index [fk_ta_usuario_titulo_tb_usuario1_idx]    Script Date: 13/05/2017 16:13:28 ******/
-CREATE NONCLUSTERED INDEX [fk_ta_usuario_titulo_tb_usuario1_idx] ON [dbo].[ta_usuario_titulo]
-(
-	[idt_usuario] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-GO
-/****** Object:  Index [fk_ta_usuario_titulo_tt_titulo1_idx]    Script Date: 13/05/2017 16:13:28 ******/
-CREATE NONCLUSTERED INDEX [fk_ta_usuario_titulo_tt_titulo1_idx] ON [dbo].[ta_usuario_titulo]
-(
-	[idt_titulo] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 GO
 /****** Object:  Index [fk_tb_marco_tb_projeto1_idx]    Script Date: 13/05/2017 16:13:28 ******/
@@ -500,11 +456,20 @@ CREATE NONCLUSTERED INDEX [fk_tb_tarefa_tt_tipo_tarefa1_idx] ON [dbo].[tb_tarefa
 	[idt_tipo_tarefa] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 GO
+/****** Object:  Index [fk_tipo_meta_conquista]    Script Date: 13/05/2017 16:13:28 ******/
+CREATE NONCLUSTERED INDEX [fk_tipo_meta_conquista] ON [dbo].[tt_conquista]
+(
+	[idt_tipo_tarefa] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+GO
 /****** Object:  Index [fk_tb_usuario_tt_nivel1_idx]    Script Date: 13/05/2017 16:13:28 ******/
 CREATE NONCLUSTERED INDEX [fk_tb_usuario_tt_nivel1_idx] ON [dbo].[tb_usuario]
 (
 	[idt_nivel] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+GO
+ALTER TABLE [dbo].[tt_conquista]  WITH CHECK ADD  CONSTRAINT [fk_tipo_meta_conquista] FOREIGN KEY([idt_tipo_tarefa])
+REFERENCES [dbo].[tt_tipo_tarefa] ([idt_tipo_tarefa])
 GO
 ALTER TABLE [dbo].[ta_usuario_conquista]  WITH CHECK ADD  CONSTRAINT [fk_conquista] FOREIGN KEY([idt_conquista])
 REFERENCES [dbo].[tt_conquista] ([idt_conquista])
@@ -525,16 +490,6 @@ ALTER TABLE [dbo].[ta_usuario_equipe]  WITH CHECK ADD  CONSTRAINT [fk_usuario_eq
 REFERENCES [dbo].[tb_usuario] ([idt_usuario])
 GO
 ALTER TABLE [dbo].[ta_usuario_equipe] CHECK CONSTRAINT [fk_usuario_equipe]
-GO
-ALTER TABLE [dbo].[ta_usuario_titulo]  WITH CHECK ADD  CONSTRAINT [fk_titulo] FOREIGN KEY([idt_titulo])
-REFERENCES [dbo].[tt_titulo] ([idt_titulo])
-GO
-ALTER TABLE [dbo].[ta_usuario_titulo] CHECK CONSTRAINT [fk_titulo]
-GO
-ALTER TABLE [dbo].[ta_usuario_titulo]  WITH CHECK ADD  CONSTRAINT [fk_usuario_titulo] FOREIGN KEY([idt_usuario])
-REFERENCES [dbo].[tb_usuario] ([idt_usuario])
-GO
-ALTER TABLE [dbo].[ta_usuario_titulo] CHECK CONSTRAINT [fk_usuario_titulo]
 GO
 ALTER TABLE [dbo].[tb_marco]  WITH CHECK ADD  CONSTRAINT [fk_projeto_marco] FOREIGN KEY([idt_projeto])
 REFERENCES [dbo].[tb_projeto] ([idt_projeto])
