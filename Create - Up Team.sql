@@ -238,7 +238,7 @@ CREATE TABLE [dbo].[tb_usuario](
 	[nme_usuario] [varchar](80) NOT NULL,
 	[tel_usuario] [varchar](16) NULL,
 	[lgn_usuario] [varchar](20) NOT NULL,
-	[pwd_usuario] [varchar](50) NOT NULL,
+	[pwd_usuario] [varchar](MAX) NOT NULL,
 	[exp_usuario] [bigint] NOT NULL,
 	[idt_nivel] [int] NOT NULL,
 	[email_usuario] [varchar](45) NOT NULL,
