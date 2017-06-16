@@ -148,6 +148,8 @@ CREATE TABLE [dbo].[tb_mensagem](
 	[idt_mensagem] [int] IDENTITY(1,1) NOT NULL,
 	[txt_mensagem] [varchar](500) NOT NULL,
 	[idt_equipe] [int] NOT NULL,
+	[idt_usuario] [int] NOT NULL,
+	[dta_envio] [date] NOT NULL
 PRIMARY KEY CLUSTERED 
 (
 	[idt_mensagem] ASC
