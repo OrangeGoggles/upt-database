@@ -410,6 +410,14 @@ CREATE NONCLUSTERED INDEX [fk_tb_mensagem_tb_equipe1_idx] ON [dbo].[tb_mensagem]
 	[idt_equipe] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 GO
+
+CREATE NONCLUSTERED INDEX [fk_tb_mensagem_tb_usuario1_idx] ON [dbo].[tb_mensagem]
+(
+	[idt_usuario] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+GO
+
+
 /****** Object:  Index [fk_tb_projeto_tb_equipe1_idx]    Script Date: 13/05/2017 16:13:28 ******/
 CREATE NONCLUSTERED INDEX [fk_tb_projeto_tb_equipe1_idx] ON [dbo].[tb_projeto]
 (
@@ -502,6 +510,11 @@ ALTER TABLE [dbo].[tb_mensagem]  WITH CHECK ADD  CONSTRAINT [fk_equipe_mensagem]
 REFERENCES [dbo].[tb_equipe] ([idt_equipe])
 GO
 ALTER TABLE [dbo].[tb_mensagem] CHECK CONSTRAINT [fk_equipe_mensagem]
+GO
+ALTER TABLE [dbo].[tb_mensagem]  WITH CHECK ADD  CONSTRAINT [fk_usuario_mensagem] FOREIGN KEY([idt_usuario])
+REFERENCES [dbo].[tb_usuario] ([idt_usuario])
+GO
+ALTER TABLE [dbo].[tb_mensagem] CHECK CONSTRAINT [fk_usuario_mensagem]
 GO
 ALTER TABLE [dbo].[tb_projeto]  WITH CHECK ADD  CONSTRAINT [fk_equipe_projeto] FOREIGN KEY([idt_equipe])
 REFERENCES [dbo].[tb_equipe] ([idt_equipe])
