@@ -241,8 +241,6 @@ CREATE TABLE [dbo].[tb_usuario](
 	[tel_usuario] [varchar](16) NULL,
 	[lgn_usuario] [varchar](20) NOT NULL,
 	[pwd_usuario] [varchar](MAX) NOT NULL,
-	[exp_usuario] [bigint] NOT NULL,
-	[idt_nivel] [int] NOT NULL,
 	[email_usuario] [varchar](45) NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -472,12 +470,7 @@ CREATE NONCLUSTERED INDEX [fk_tipo_meta_conquista] ON [dbo].[tt_conquista]
 	[idt_tipo_tarefa] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 GO
-/****** Object:  Index [fk_tb_usuario_tt_nivel1_idx]    Script Date: 13/05/2017 16:13:28 ******/
-CREATE NONCLUSTERED INDEX [fk_tb_usuario_tt_nivel1_idx] ON [dbo].[tb_usuario]
-(
-	[idt_nivel] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-GO
+
 ALTER TABLE [dbo].[tt_conquista]  WITH CHECK ADD  CONSTRAINT [fk_tipo_meta_conquista] FOREIGN KEY([idt_tipo_tarefa])
 REFERENCES [dbo].[tt_tipo_tarefa] ([idt_tipo_tarefa])
 GO
@@ -555,11 +548,6 @@ ALTER TABLE [dbo].[tb_tarefa]  WITH CHECK ADD  CONSTRAINT [fk_usuario_tarefa] FO
 REFERENCES [dbo].[tb_usuario] ([idt_usuario])
 GO
 ALTER TABLE [dbo].[tb_tarefa] CHECK CONSTRAINT [fk_usuario_tarefa]
-GO
-ALTER TABLE [dbo].[tb_usuario]  WITH CHECK ADD  CONSTRAINT [fk_nivel] FOREIGN KEY([idt_nivel])
-REFERENCES [dbo].[tt_nivel] ([idt_nivel])
-GO
-ALTER TABLE [dbo].[tb_usuario] CHECK CONSTRAINT [fk_nivel]
 GO
 USE [master]
 GO
