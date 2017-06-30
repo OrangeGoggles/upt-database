@@ -2,8 +2,10 @@ USe upteam
 
 SET IDENTITY_INSERT [dbo].[tb_equipe] ON 
 
-INSERT [dbo].[tb_equipe] ([idt_equipe], [nme_equipe], [dsc_equipe]) VALUES (1, N'Equipe Teste 1', N'Desenvolve varios projetos teste')
-INSERT [dbo].[tb_equipe] ([idt_equipe], [nme_equipe], [dsc_equipe]) VALUES (2, N'OrangeGoggles', N'Empresa jovem e com potencial')
+INSERT [dbo].[tb_equipe] ([idt_equipe], [nme_equipe], [dsc_equipe]) VALUES (1, N'Fabrica de Software AIC', N'Desenvolvemos varios projetos para clientes diversos')
+INSERT [dbo].[tb_equipe] ([idt_equipe], [nme_equipe], [dsc_equipe]) VALUES (2, N'OrangeGoggles', N'Empresa jovem e com potencial, tocando nossos proprios projetos, por enquanto')
+INSERT [dbo].[tb_equipe] ([idt_equipe], [nme_equipe], [dsc_equipe]) VALUES (3, N'SSI-Saude', N'Equipe de TI responsavel pela area de saude da PGR')
+INSERT [dbo].[tb_equipe] ([idt_equipe], [nme_equipe], [dsc_equipe]) VALUES (4, N'DNIT', N'Orgao executor do Ministerio dos Transportes')
 SET IDENTITY_INSERT [dbo].[tb_equipe] OFF
 SET IDENTITY_INSERT [dbo].[tt_nivel] ON 
 
@@ -20,19 +22,33 @@ INSERT [dbo].[tt_nivel] ([idt_nivel], [nme_nivel], [vlr_exp_max]) VALUES (10, N'
 SET IDENTITY_INSERT [dbo].[tt_nivel] OFF
 SET IDENTITY_INSERT [dbo].[tb_usuario] ON 
 
-INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (2, N'Teste', NULL, N'teste', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'teste@teste')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (1, N'Lucas', "9999-8888", N'lucasptr', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'lucas@prates')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (2, N'Joao', "9999-7777", N'joaovm', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'joao@vitor')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (3, N'Vinicius', "9999-6666", N'viniciuspc', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'vinicius@pereira')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (4, N'Fulano', "9999-5555", N'fulano', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'fulano@teste')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (5, N'Ciclano', "9999-4444", N'ciclano', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'ciclano@teste')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (6, N'Beltrano', "9999-3333", N'beltrano', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'beltrano@teste')
 SET IDENTITY_INSERT [dbo].[tb_usuario] OFF
 SET IDENTITY_INSERT [dbo].[ta_usuario_equipe] ON 
 
-INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (1, 2, 1)
-INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (2, 2, 2)
+INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (1, 1, 3)
+INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (2, 1, 2)
+INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (3, 2, 4)
+INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (4, 2, 2)
+INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (5, 3, 1)
+INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (6, 3, 2)
+INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (7, 4, 3)
+INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (8, 5, 4)
+INSERT [dbo].[ta_usuario_equipe] ([idt_usuario_equipe], [idt_usuario], [idt_equipe]) VALUES (9, 6, 1)
 SET IDENTITY_INSERT [dbo].[ta_usuario_equipe] OFF
 
 SET IDENTITY_INSERT [dbo].[tb_projeto] ON 
 
-INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (3, N'Projeto Teste', N'Projeto de desenvolvimento teste', CAST(N'2017-01-01' AS Date), CAST(N'2017-06-01' AS Date), 1)
-INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (4, N'Warn', N'Projeto Warn', CAST(N'2017-06-01' AS Date), CAST(N'2017-12-01' AS Date), 2)
-INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (5, N'UpTeam', N'Projeto UpTeam', CAST(N'2017-01-01' AS Date), CAST(N'2017-06-01' AS Date), 2)
+INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (1, N'Prontuario Eletronico', N'Projeto para automatizar todo o ambiente de trabalho da area da saude da PGR, desde prontuario a escala de medicos', CAST(N'2016-08-01' AS Date), CAST(N'2017-12-31' AS Date), 3)
+INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (2, N'Warn', N'Projeto Warn', CAST(N'2017-07-01' AS Date), CAST(N'2018-02-01' AS Date), 2)
+INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (3, N'UpTeam', N'Projeto UpTeam', CAST(N'2017-01-01' AS Date), CAST(N'2017-06-30' AS Date), 2)
+INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (4, N'DocYouSign', N'Sistema de assinatura eletronica de documento', CAST(N'2017-01-01' AS Date), CAST(N'2017-12-31' AS Date), 1)
+INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (5, N'Projeto DNIT', N'Analise de mais de 50 mil Km de rodovias brasileiras', CAST(N'2017-01-01' AS Date), CAST(N'2017-12-31' AS Date), 4)
 SET IDENTITY_INSERT [dbo].[tb_projeto] OFF
 SET IDENTITY_INSERT [dbo].[tb_marco] ON 
 
