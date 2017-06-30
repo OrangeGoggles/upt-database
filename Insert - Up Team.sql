@@ -52,22 +52,39 @@ INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_ini
 SET IDENTITY_INSERT [dbo].[tb_projeto] OFF
 SET IDENTITY_INSERT [dbo].[tb_marco] ON 
 
-INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (2, N'Entrega Teste', N'Entrega de teste para testar', CAST(N'2017-03-02' AS Date), 3)
-INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (1002, N'Ponto de Controle 1', N'Entrega 1', CAST(N'2017-03-31' AS Date), 5)
-INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (1003, N'Ponto de Controle 2', N'Entrega 2', CAST(N'2017-04-28' AS Date), 5)
-INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (1004, N'Ponto de Controle 3', N'Entrega 3', CAST(N'2017-05-26' AS Date), 5)
-INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (1005, N'Ponto de Controle 4', N'Entrega 4', CAST(N'2017-06-30' AS Date), 5)
-INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (1006, N'Entrega de Funcionalidades 1', N'Entrega do prototipo de funcionalidades', CAST(N'2017-07-01' AS Date), 4)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (1, N'Termino da dinamica com os medicos e enfermeiros', N'Coletado informacoes e requisitos atraves de dinamicas entre os medicos.', CAST(N'2017-05-18' AS Date), 1)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (2, N'Entrega do prototipo', N'Entregar prototipo do sistema com as principais telas montadas', CAST(N'2017-07-31' AS Date), 1)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (3, N'Ponto de Controle 1', N'Entrega dos documentos Arquitetura do Negocio e Plano de Projeto.', CAST(N'2017-03-31' AS Date), 3)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (4, N'Ponto de Controle 2', N'Entrega do Modelo de Dados e do Prototipo', CAST(N'2017-04-28' AS Date), 3)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (5, N'Ponto de Controle 3', N'Entrega do Codigo Fonte de Cruds, das Atividades e dos WebServices', CAST(N'2017-05-26' AS Date), 3)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (6, N'Ponto de Controle 4', N'Entrega dos Scripts de Criacao do Banco e Carga do Banco.', CAST(N'2017-06-30' AS Date), 3)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (7, N'Funcionalidades Definidas', N'Termino do documento de requisitos e negocio, e entrega do prototipo de funcionalidades', CAST(N'2017-07-01' AS Date), 2)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (8, N'Aplicativo Mobile Criado', N'Aplicativo mobile multiplataforma pronto.', CAST(N'2017-10-31' AS Date), 2)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (9, N'Aplicativo Web Criado', N'Aplicativo mobile multiplataforma pronto.', CAST(N'2017-12-31' AS Date), 2)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (10, N'Analise de 1/2 das Vias', N'Cumprimento de metade da meta estabelecida para o ano.', CAST(N'2017-06-01' AS Date), 5)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (11, N'Analise de completa das vias', N'Cumprimento de toda meta estabelecida.', CAST(N'2017-12-31' AS Date), 5)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (12, N'Requisitos Definidos.', N'Reunioes com os clientes terminadas e documentacao de requisitos entregue.', CAST(N'2017-03-31' AS Date), 4)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (13, N'Banco Criado!', N'Banco de dados criado junto com sua documentacao.', CAST(N'2017-06-30' AS Date), 4)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (14, N'Prototipo Criado!', N'Prototipo criado e colocado aos clientes testarem e darem feedback.', CAST(N'2017-09-30' AS Date), 4)
+INSERT [dbo].[tb_marco] ([idt_marco], [nme_marco], [dsc_marco], [dln_marco], [idt_projeto]) VALUES (15, N'Entrega do Sistema!', N'Sistema entregue aos clientes.', CAST(N'2017-12-31' AS Date), 4)
 SET IDENTITY_INSERT [dbo].[tb_marco] OFF
 SET IDENTITY_INSERT [dbo].[tb_sprint] ON 
 
-INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (1, 1, CAST(N'2018-01-01' AS Date), CAST(N'2018-02-15' AS Date), 4)
-INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (4, 2, CAST(N'2018-02-16' AS Date), CAST(N'2018-04-01' AS Date), 4)
-INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (6, 1, CAST(N'2017-03-01' AS Date), CAST(N'2017-03-31' AS Date), 5)
-INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (9, 2, CAST(N'2017-04-01' AS Date), CAST(N'2017-04-28' AS Date), 5)
-INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (10, 3, CAST(N'2017-04-29' AS Date), CAST(N'2017-05-26' AS Date), 5)
-INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (11, 4, CAST(N'2017-05-27' AS Date), CAST(N'2017-06-30' AS Date), 5)
-INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (12, 1, CAST(N'2017-06-01' AS Date), CAST(N'2017-07-12' AS Date), 3)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (1, 1, CAST(N'2016-08-01' AS Date), CAST(N'2017-01-01' AS Date), 1)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (2, 2, CAST(N'2017-01-02' AS Date), CAST(N'2017-06-30' AS Date), 1)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (3, 1, CAST(N'2017-07-01' AS Date), CAST(N'2017-12-31' AS Date), 3)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (4, 2, CAST(N'2017-04-01' AS Date), CAST(N'2017-04-28' AS Date), 3)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (5, 3, CAST(N'2017-04-29' AS Date), CAST(N'2017-05-26' AS Date), 3)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (6, 4, CAST(N'2017-05-27' AS Date), CAST(N'2017-06-30' AS Date), 3)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (7, 1, CAST(N'2017-06-01' AS Date), CAST(N'2017-07-12' AS Date), 2)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (8, 2, CAST(N'2017-06-01' AS Date), CAST(N'2017-07-12' AS Date), 2)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (9, 3, CAST(N'2017-06-01' AS Date), CAST(N'2017-07-12' AS Date), 2)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (8, 1, CAST(N'2017-01-01' AS Date), CAST(N'2017-03-30' AS Date), 4)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (9, 2, CAST(N'2017-04-01' AS Date), CAST(N'2017-06-30' AS Date), 4)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (9, 3, CAST(N'2017-07-01' AS Date), CAST(N'2017-09-30' AS Date), 4)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (9, 3, CAST(N'2017-10-01' AS Date), CAST(N'2017-12-31' AS Date), 4)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (10, 1, CAST(N'2017-01-01' AS Date), CAST(N'2017-06-30' AS Date), 5)
+INSERT [dbo].[tb_sprint] ([idt_sprint], [vlr_iteracao_sprint], [dta_inicio], [dta_termino], [idt_projeto]) VALUES (11, 2, CAST(N'2017-07-01' AS Date), CAST(N'2017-12-31' AS Date), 5)
 SET IDENTITY_INSERT [dbo].[tb_sprint] OFF
 SET IDENTITY_INSERT [dbo].[tt_dificuldade] ON 
 
