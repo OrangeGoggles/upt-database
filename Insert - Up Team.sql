@@ -1,4 +1,4 @@
-USe upteam
+USE upteam
 
 SET IDENTITY_INSERT [dbo].[tb_equipe] ON 
 
@@ -22,12 +22,12 @@ INSERT [dbo].[tt_nivel] ([idt_nivel], [nme_nivel], [vlr_exp_max]) VALUES (10, N'
 SET IDENTITY_INSERT [dbo].[tt_nivel] OFF
 SET IDENTITY_INSERT [dbo].[tb_usuario] ON 
 
-INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (1, N'Lucas', "9999-8888", N'lucasptr', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'lucas@prates')
-INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (2, N'Joao', "9999-7777", N'joaovm', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'joao@vitor')
-INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (3, N'Vinicius', "9999-6666", N'viniciuspc', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'vinicius@pereira')
-INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (4, N'Fulano', "9999-5555", N'fulano', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'fulano@teste')
-INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (5, N'Ciclano', "9999-4444", N'ciclano', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'ciclano@teste')
-INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [exp_usuario], [idt_nivel], [email_usuario]) VALUES (6, N'Beltrano', "9999-3333", N'beltrano', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', 1, 1, N'beltrano@teste')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [email_usuario]) VALUES (1, N'Lucas', '9999-8888', N'lucasptr', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', N'lucas@prates')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [email_usuario]) VALUES (2, N'Joao', '9999-7777', N'joaovm', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', N'joao@vitor')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [email_usuario]) VALUES (3, N'Vinicius', '9999-6666', N'viniciuspc', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', N'vinicius@pereira')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [email_usuario]) VALUES (4, N'Fulano', '9999-5555', N'fulano', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', N'fulano@teste')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [email_usuario]) VALUES (5, N'Ciclano', '9999-4444', N'ciclano', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', N'ciclano@teste')
+INSERT [dbo].[tb_usuario] ([idt_usuario], [nme_usuario], [tel_usuario], [lgn_usuario], [pwd_usuario], [email_usuario]) VALUES (6, N'Beltrano', '9999-3333', N'beltrano', N'1000:klUaycGEdAYKYzoGHK2LJnnofQbIVe77:aBbPeUlEBhulCW2aJOlMDQFduDcy4UkG', N'beltrano@teste')
 SET IDENTITY_INSERT [dbo].[tb_usuario] OFF
 SET IDENTITY_INSERT [dbo].[ta_usuario_equipe] ON 
 
@@ -46,7 +46,7 @@ SET IDENTITY_INSERT [dbo].[tb_projeto] ON
 
 INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (1, N'Prontuario Eletronico', N'Projeto para automatizar todo o ambiente de trabalho da area da saude da PGR, desde prontuario a escala de medicos', CAST(N'2016-08-01' AS Date), CAST(N'2017-12-31' AS Date), 3)
 INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (2, N'Warn', N'Projeto Warn', CAST(N'2017-07-01' AS Date), CAST(N'2018-02-01' AS Date), 2)
-INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (3, N'UpTeam', N'Projeto UpTeam', CAST(N'2017-01-01' AS Date), CAST(N'2017-06-30' AS Date), 2)
+INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (3, N'upteam', N'Projeto upteam', CAST(N'2017-01-01' AS Date), CAST(N'2017-06-30' AS Date), 2)
 INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (4, N'DocYouSign', N'Sistema de assinatura eletronica de documento', CAST(N'2017-01-01' AS Date), CAST(N'2017-12-31' AS Date), 1)
 INSERT [dbo].[tb_projeto] ([idt_projeto], [nme_projeto], [dsc_projeto], [dta_inicio], [dta_termino], [idt_equipe]) VALUES (5, N'Projeto DNIT', N'Analise de mais de 50 mil Km de rodovias brasileiras', CAST(N'2017-01-01' AS Date), CAST(N'2017-12-31' AS Date), 4)
 SET IDENTITY_INSERT [dbo].[tb_projeto] OFF
@@ -138,7 +138,7 @@ INSERT [dbo].[tb_tarefa] ([idt_tarefa], [nme_tarefa], [dsc_tarefa], [dta_inicio]
 INSERT [dbo].[tb_tarefa] ([idt_tarefa], [nme_tarefa], [dsc_tarefa], [dta_inicio], [dta_fim], [idt_dificuldade], [idt_sprint], [idt_usuario], [idt_prioridade], [idt_estado_tarefa], [idt_tipo_tarefa]) VALUES (18, N'Marcar reuniao com o cliente', N'Para a realizacao das necessidades do cliente.', CAST(N'2017-01-01' AS Date), CAST(N'2017-02-15' AS Date), 3, 10, 5, 4, 2, 3)
 INSERT [dbo].[tb_tarefa] ([idt_tarefa], [nme_tarefa], [dsc_tarefa], [dta_inicio], [dta_fim], [idt_dificuldade], [idt_sprint], [idt_usuario], [idt_prioridade], [idt_estado_tarefa], [idt_tipo_tarefa]) VALUES (19, N'Corrigir erro da tabela X no banco', N'Corrigir erro de foreign key na tabela X.', CAST(N'2017-04-17' AS Date), CAST(N'2017-05-25' AS Date), 1, 11, 5, 4, 2, 2)
 INSERT [dbo].[tb_tarefa] ([idt_tarefa], [nme_tarefa], [dsc_tarefa], [dta_inicio], [dta_fim], [idt_dificuldade], [idt_sprint], [idt_usuario], [idt_prioridade], [idt_estado_tarefa], [idt_tipo_tarefa]) VALUES (20, N'Criar prototipo', N'Apresentar prototipo para os clientes.', CAST(N'2017-07-02' AS Date), CAST(N'2017-08-20' AS Date), 3, 12, 3, 3, 2, 3)
-INSERT [dbo].[tb_tarefa] ([idt_tarefa], [nme_tarefa], [dsc_tarefa], [dta_inicio], [dta_fim], [idt_dificuldade], [idt_sprint], [idt_usuario], [idt_prioridade], [idt_estado_tarefa], [idt_tipo_tarefa]) VALUES (21, Nr'Implantacao do sistema nos produtos da capitalizacao ', N'Implantacao do DocYouSign nos produtos da capitalizacao.', CAST(N'2017-08-10' AS Date), CAST(N'2017-09-20' AS Date), 5, 13, 3, 5, 2, 3)
+INSERT [dbo].[tb_tarefa] ([idt_tarefa], [nme_tarefa], [dsc_tarefa], [dta_inicio], [dta_fim], [idt_dificuldade], [idt_sprint], [idt_usuario], [idt_prioridade], [idt_estado_tarefa], [idt_tipo_tarefa]) VALUES (21, N'Implantacao do sistema nos produtos da capitalizacao ', N'Implantacao do DocYouSign nos produtos da capitalizacao.', CAST(N'2017-08-10' AS Date), CAST(N'2017-09-20' AS Date), 5, 13, 3, 5, 2, 3)
 INSERT [dbo].[tb_tarefa] ([idt_tarefa], [nme_tarefa], [dsc_tarefa], [dta_inicio], [dta_fim], [idt_dificuldade], [idt_sprint], [idt_usuario], [idt_prioridade], [idt_estado_tarefa], [idt_tipo_tarefa]) VALUES (22, N'Corrigir problema no sistema', N'Corrigir problemas do sistema para que possa realizar as analises dos videos.', CAST(N'2017-01-01' AS Date), CAST(N'2017-03-30' AS Date), 4, 14, 2, 5, 2, 3)
 INSERT [dbo].[tb_tarefa] ([idt_tarefa], [nme_tarefa], [dsc_tarefa], [dta_inicio], [dta_fim], [idt_dificuldade], [idt_sprint], [idt_usuario], [idt_prioridade], [idt_estado_tarefa], [idt_tipo_tarefa]) VALUES (23, N'Analisar primeira parte da meta do ano', N'Analisar uma quantidade equivalente a metade dos videos', CAST(N'2017-04-01' AS Date), CAST(N'2017-06-20' AS Date), 3, 14, 6, 4, 2, 3)
 INSERT [dbo].[tb_tarefa] ([idt_tarefa], [nme_tarefa], [dsc_tarefa], [dta_inicio], [dta_fim], [idt_dificuldade], [idt_sprint], [idt_usuario], [idt_prioridade], [idt_estado_tarefa], [idt_tipo_tarefa]) VALUES (24, N'Analisar a segunda parte da meta do ano', N'Terminar a analise dos videos das vias.', CAST(N'2017-07-01' AS Date), CAST(N'2017-12-31' AS Date), 3, 15, 6, 4, 2, 3)
